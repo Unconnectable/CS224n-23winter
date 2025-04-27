@@ -115,4 +115,82 @@ def plot_embeddings(M_reduced, word2ind, words):
     plt.show()
     ### SOLUTION END
 ```
+
 ## 第二部分：基于预测的词向量
+
+### 2.1/2.2
+
+按照要求运行代码
+
+### 2.3
+
+```python
+### SOLUTION BEGIN
+
+w1 = "sofa"
+w2 = "chair"
+w3 = "beer"
+w1_w2_dist = wv_from_bin.distance(w1, w2)
+w1_w3_dist = wv_from_bin.distance(w1, w3)
+#同义词 反义词
+print("Synonyms {}, {} have cosine distance: {}".format(w1, w2, w1_w2_dist))
+print("Antonyms {}, {} have cosine distance: {}".format(w1, w3, w1_w3_dist))
+
+### SOLUTION END
+```
+
+### 2.4
+
+```python
+# Run this cell to answer the analogy -- man : grandfather :: woman : x
+
+#pprint.pprint(wv_from_bin.most_similar(positive=['woman', 'grandfather'], negative=['man']))
+pprint.pprint(wv_from_bin.most_similar(positive=['water','wet'],negative=['sun']))
+```
+
+### 2.5
+
+```python
+### SOLUTION BEGIN
+
+x, y, a, b = "usa", "washington", "china", "beijing"
+assert wv_from_bin.most_similar(positive=[a, y], negative=[x])[0][0] == b
+
+### SOLUTION END
+```
+
+### 2.6
+
+```python
+### SOLUTION BEGIN
+
+x, y, a, b = "china","beijing","american",""
+pprint.pprint(wv_from_bin.most_similar(positive=[a, y], negative=[x]))
+
+### SOLUTION END
+```
+
+### 2.8
+
+```python
+### SOLUTION BEGIN
+
+A = "man"
+B = "woman"
+word = "engineer"
+pprint.pprint(wv_from_bin.most_similar(positive=[A, word], negative=[B]))
+print()
+pprint.pprint(wv_from_bin.most_similar(positive=[B, word], negative=[A]))
+
+### SOLUTION END
+```
+
+### 2.9
+
+#### a. 给出一个关于词向量中偏见是如何产生的解释。简要描述一个现实世界的例子来说明这种偏见的来源。
+
+工程师,工人一般是男性,女性数量较少
+
+#### b. 你可以使用什么方法来缓解词向量中表现出的偏见？简要描述一个现实世界的例子来说明这种方法。
+
+补充数据，增加反刻板印象
