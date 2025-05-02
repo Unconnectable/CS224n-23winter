@@ -1,4 +1,4 @@
-# 作业 1：探索词向量
+# 作业 1:探索词向量
 
 ## Part 1: 基于计数的词向量
 
@@ -29,8 +29,8 @@ def distinct_words(corpus):
 `["Start I Love Panda and move body END","Start I Love CS224n and Stanford END"]`
 
 1. 首先去重然后映射为字典
-2. 但是计算`co-occurence-matrix`必须在原来的`corpus`里面计算,比如这里`Start I`的结果应该是 2 而不应是 1，应为要分别计算
-3. 对`corpus`的每个句子，直接计算左右范围然后遍历就行，注意`range`是左开右闭区间
+2. 但是计算`co-occurence-matrix`必须在原来的`corpus`里面计算,比如这里`Start I`的结果应该是 2 而不应是 1,应为要分别计算
+3. 对`corpus`的每个句子,直接计算左右范围然后遍历就行,注意`range`是左开右闭区间
 
 ### 注意:
 
@@ -68,15 +68,15 @@ def compute_co_occurrence_matrix(corpus, window_size=4):
 
 #### `TruncatedSVD`初始化参数
 
-- `n_components=k`：指定要保留的维度数（降维后的维度）
-- `n_iter=n_iters`：指定迭代次数（影响算法的精确度）
-- `random_state=0`：设置随机种子（保证结果可重现）
+- `n_components=k`:指定要保留的维度数(降维后的维度)
+- `n_iter=n_iters`:指定迭代次数(影响算法的精确度)
+- `random_state=0`:设置随机种子(保证结果可重现)
 
 #### 2. 方法调用
 
-- `fit_transform(M)`：一次性完成模型拟合和数据转换
-  - `fit()`：学习数据的统计特性（计算奇异值分解）
-  - `transform()`：应用降维转换
+- `fit_transform(M)`:一次性完成模型拟合和数据转换
+  - `fit()`:学习数据的统计特性(计算奇异值分解)
+  - `transform()`:应用降维转换
 
 ```py
 def reduce_to_k_dim(M, k=2):
@@ -116,7 +116,7 @@ def plot_embeddings(M_reduced, word2ind, words):
     ### SOLUTION END
 ```
 
-## 第二部分：基于预测的词向量
+## 第二部分:基于预测的词向量
 
 ### 2.1/2.2
 
@@ -187,10 +187,10 @@ pprint.pprint(wv_from_bin.most_similar(positive=[B, word], negative=[A]))
 
 ### 2.9
 
-#### a. 给出一个关于词向量中偏见是如何产生的解释。简要描述一个现实世界的例子来说明这种偏见的来源。
+#### a. 给出一个关于词向量中偏见是如何产生的解释.简要描述一个现实世界的例子来说明这种偏见的来源.
 
 工程师,工人一般是男性,女性数量较少
 
-#### b. 你可以使用什么方法来缓解词向量中表现出的偏见？简要描述一个现实世界的例子来说明这种方法。
+#### b. 你可以使用什么方法来缓解词向量中表现出的偏见？简要描述一个现实世界的例子来说明这种方法.
 
-补充数据，增加反刻板印象
+补充数据,增加反刻板印象

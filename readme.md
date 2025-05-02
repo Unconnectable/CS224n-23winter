@@ -6,7 +6,7 @@
 
 ### **前置知识**
 
-[Python Numpy 教程（含 Jupyter 和 Colab） )](https://cs231n.github.io/python-numpy-tutorial/)
+[Python Numpy 教程(含 Jupyter 和 Colab) )](https://cs231n.github.io/python-numpy-tutorial/)
 
 ## Schedule
 
